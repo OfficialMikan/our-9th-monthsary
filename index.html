@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy 9th Monthsary 🌸</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+
+  <style>
+    :root {
+      --cream: #fdf6f0;
+      --blush: #f2c4c4;
+      --rose: #d98fa0;
+      --deep-rose: #b5687a;
+      --petal: #f9e4e4;
+      --sage: #b8c5b0;
+      --warm-gray: #9a8f8f;
+      --text-dark: #3a2d2d;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      background-color: var(--cream);
+      color: var(--text-dark);
+      overflow-x: hidden;
+    }
+
+    h1,
+    h2,
+    h3,
+    .serif {
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    /* Grain texture overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.4;
+    }
+
+    /* ── Hero ── */
+    .hero-bg {
+      background: radial-gradient(ellipse at 70% 20%, #f9e4e4 0%, transparent 60%),
+        radial-gradient(ellipse at 10% 80%, #e8f0e4 0%, transparent 55%),
+        var(--cream);
+    }
+
+    .petal-tag {
+      background: var(--petal);
+      border: 1px solid var(--blush);
+      color: var(--deep-rose);
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      padding: 0.3rem 1rem;
+      border-radius: 9999px;
+      display: inline-block;
+    }
+
+    .hero-title {
+      font-size: clamp(3rem, 12vw, 6rem);
+      line-height: 1.05;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--text-dark);
+    }
+
+    .hero-title span {
+      color: var(--deep-rose);
+    }
+
+    .photo-frame {
+      position: relative;
+      width: 100%;
+      max-width: 340px;
+      margin: 0 auto;
+    }
+
+    .photo-frame::before {
+      content: '';
+      position: absolute;
+      inset: -8px;
+      border: 1px solid var(--blush);
+      border-radius: 40% 60% 55% 45% / 50% 45% 55% 50%;
+      animation: morph 8s ease-in-out infinite;
+    }
+
+    .photo-frame::after {
+      content: '';
+      position: absolute;
+      inset: -16px;
+      border: 1px solid var(--sage);
+      border-radius: 55% 45% 40% 60% / 45% 55% 50% 50%;
+      animation: morph 8s ease-in-out infinite reverse;
+      opacity: 0.5;
+    }
+
+    @keyframes morph {
+
+      0%,
+      100% {
+        border-radius: 40% 60% 55% 45% / 50% 45% 55% 50%;
+      }
+
+      25% {
+        border-radius: 55% 45% 40% 60% / 45% 60% 40% 55%;
+      }
+
+      50% {
+        border-radius: 45% 55% 60% 40% / 55% 40% 60% 45%;
+      }
+
+      75% {
+        border-radius: 60% 40% 45% 55% / 40% 55% 45% 60%;
+      }
+    }
+
+    .photo-inner {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      background: linear-gradient(135deg, #f9e4e4 0%, #e8f0e4 50%, #f2c4c4 100%);
+      border-radius: 40% 60% 55% 45% / 50% 45% 55% 50%;
+      animation: morph 8s ease-in-out infinite;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* FIX 1: bounce was used on the scroll cue but never defined */
+    @keyframes bounce {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(7px);
+      }
+    }
+
+    /* ── Counter ── */
+    .counter-section {
+      background: var(--text-dark);
+      color: var(--cream);
+    }
+
+    .counter-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 1.5rem;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      flex: 1;
+      min-width: 0;
+    }
+
+    .counter-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 7vw, 4rem);
+      font-weight: 300;
+      color: var(--blush);
+      line-height: 1;
+    }
+
+    .counter-label {
+      font-size: 0.55rem;
+      letter-spacing: 0.18em;
+      color: var(--sage);
+      text-transform: uppercase;
+      margin-top: 0.4rem;
+    }
+
+    /* ── Timeline ── */
+    .timeline-dot {
+      width: 12px;
+      height: 12px;
+      background: var(--rose);
+      border: 2px solid var(--cream);
+      border-radius: 50%;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 1.5rem;
+      z-index: 2;
+    }
+
+    .timeline-card {
+      background: white;
+      border: 1px solid var(--petal);
+      border-radius: 1rem;
+      padding: 1.2rem;
+      position: relative;
+      box-shadow: 0 2px 20px rgba(180, 120, 130, 0.06);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .timeline-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(180, 120, 130, 0.12);
+    }
+
+    .timeline-month {
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--rose);
+    }
+
+    /* --- NEW HORIZONTAL FILM STYLES --- */
+    :root {
+      --film-bg: #1a1a1a;
+      /* Darker background for the film strip look */
+    }
+
+    .timeline-section {
+      padding: 80px 0;
+      background-color: var(--cream);
+      overflow: hidden;
+    }
+
+    .timeline-horizontal-wrapper {
+      width: 100%;
+      overflow-x: auto;
+      padding: 40px 0;
+      display: flex;
+      cursor: grab;
+      /* Hide scrollbars */
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .timeline-horizontal-wrapper::-webkit-scrollbar {
+      display: none;
+    }
+
+    .timeline-track {
+      display: flex;
+      gap: 1.5rem;
+      padding: 0 10vw;
+      /* Gives breathing room at the start and end */
+    }
+
+    .timeline-card-horizontal {
+      flex: 0 0 280px;
+      /* Fixed width for the "frames" */
+      background: white;
+      border-radius: 12px;
+      padding: 1rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .timeline-card-horizontal:hover {
+      transform: translateY(-10px);
+    }
+
+    .film-frame {
+      width: 100%;
+      aspect-ratio: 4/5;
+      /* Good for phone portraits */
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 1rem;
+      background: #eee;
+    }
+
+    .film-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ── Reveal Section ── */
+    .heart-btn {
+      width: 72px;
+      height: 72px;
+      background: var(--petal);
+      border: 1.5px solid var(--blush);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .heart-btn::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--rose);
+      border-radius: 50%;
+      transform: scale(0);
+      transition: transform 0.3s ease;
+    }
+
+    .heart-btn:hover::before {
+      transform: scale(1);
+    }
+
+    .heart-btn:hover svg {
+      color: white;
+    }
+
+    .heart-btn:active {
+      transform: scale(0.93);
+    }
+
+    .heart-btn svg {
+      position: relative;
+      z-index: 1;
+      color: var(--deep-rose);
+      transition: color 0.25s ease;
+    }
+
+    .reason-card {
+      background: white;
+      border: 1px solid var(--petal);
+      border-radius: 1.5rem;
+      padding: 2rem;
+      margin-top: 1.5rem;
+      box-shadow: 0 2px 20px rgba(180, 120, 130, 0.08);
+      animation: fadeUp 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.96);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .reason-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 4rem;
+      font-weight: 300;
+      color: var(--petal);
+      line-height: 1;
+      position: absolute;
+      top: 0.5rem;
+      right: 1.5rem;
+    }
+
+    /* ── Spotify ── */
+    .spotify-section {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    }
+
+    .spotify-placeholder {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 1.5rem;
+      padding: 2.5rem;
+      text-align: center;
+    }
+
+    .spotify-icon-wrap {
+      width: 64px;
+      height: 64px;
+      background: #1DB954;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+    }
+
+    #spotify-container {
+      position: relative;
+      z-index: 1;
+      /* Base layer */
+    }
+
+    #spotify-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 999 !important;
+      /* Forces this to be on top of everything */
+      background: rgba(255, 0, 0, 0);
+      /* Keep it invisible */
+    }
+
+    /* ── Nav dots ── */
+    .nav-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--blush);
+      opacity: 0.4;
+      transition: opacity 0.3s, width 0.3s;
+      cursor: pointer;
+    }
+
+    .nav-dot.active {
+      opacity: 1;
+      width: 20px;
+      border-radius: 3px;
+    }
+
+    /* ── Floating petals ── */
+    .petal {
+      position: fixed;
+      pointer-events: none;
+      opacity: 0;
+      z-index: 100;
+      font-size: 1rem;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px) rotate(0deg);
+      }
+
+      10% {
+        opacity: 0.7;
+      }
+
+      90% {
+        opacity: 0.7;
+      }
+
+      100% {
+        opacity: 0;
+        transform: translateY(100vh) rotate(720deg);
+      }
+    }
+
+    /* ── Scroll reveal ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── Footer flourish ── */
+    .divider-flourish {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .divider-flourish::before,
+    .divider-flourish::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--blush);
+      opacity: 0.5;
+    }
+
+    .heart-particle {
+      position: fixed;
+      pointer-events: none;
+      font-size: 1.5rem;
+      z-index: 9999;
+      user-select: none;
+      animation: float-up 1s ease-out forwards;
+    }
+
+    @keyframes float-up {
+      0% {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 1;
+      }
+
+      100% {
+        transform: translate(-50%, -150%) scale(1.5);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ════════════════════════════════
+      BACKGROUND MUSIC - MP3 VERSION
+════════════════════════════════ -->
+  <audio id="bgMusic" loop>
+    <source src="love.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <!-- ════════════════════════════════
+     HERO
+════════════════════════════════ -->
+  <section
+    class="hero-bg min-h-screen flex flex-col items-center justify-center px-6 pt-16 pb-12 relative overflow-hidden">
+
+    <!-- Decorative blobs -->
+    <div
+      style="position:absolute;top:-60px;right:-60px;width:220px;height:220px;background:var(--petal);border-radius:50%;opacity:0.5;filter:blur(40px);">
+    </div>
+    <div
+      style="position:absolute;bottom:-40px;left:-40px;width:180px;height:180px;background:#e8f0e4;border-radius:50%;opacity:0.6;filter:blur(30px);">
+    </div>
+
+    <div class="w-full max-w-md mx-auto flex flex-col items-center text-center gap-6 relative z-10">
+
+      <div class="petal-tag">✦ 9 months of us ✦</div>
+
+      <h1 class="hero-title">
+        Happy<br><span>9th</span><br>Monthsary
+      </h1>
+
+      <!-- Photo Frame -->
+      <div class="w-full flex flex-col items-center gap-8">
+        <!-- The Frame containing the Video -->
+        <div class="photo-frame my-2">
+          <div class="photo-inner" style="background: none;">
+            <!-- Video replaces the camera icon/image -->
+            <!-- 'muted' and 'playsinline' are required for autoplay to work on mobile -->
+            <video src="your-video.mov" autoplay loop muted playsinline
+              style="width: 100%; height: 100%; object-fit: cover;">
+            </video>
+          </div>
+        </div>
+
+        <!-- Text moved outside the circle -->
+        <p class="serif"
+          style="font-size:1.35rem; font-style:italic; color:var(--warm-gray); line-height:1.5; margin-top: 1rem;">
+          "Every day is memorable<br>with you."
+        </p>
+      </div>
+
+      <!-- Scroll cue -->
+      <div
+        style="margin-top:1rem;display:flex;flex-direction:column;align-items:center;gap:0.3rem;animation:bounce 2s ease-in-out infinite;">
+        <p style="font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--rose);">scroll</p>
+        <i data-lucide="chevron-down" style="width:18px;height:18px;color:var(--rose);"></i>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════
+     RELATIONSHIP COUNTER
+════════════════════════════════ -->
+  <section class="counter-section py-16 px-6 reveal">
+    <div class="w-full max-w-md mx-auto flex flex-col items-center gap-8">
+
+      <div class="text-center">
+        <p style="font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage);">we have been
+          together for</p>
+        <h2 class="serif" style="font-size:2.2rem;font-weight:300;color:var(--cream);margin-top:0.3rem;">Our Time
+          Together</h2>
+      </div>
+
+      <div class="flex gap-3 w-full">
+        <div class="counter-card">
+          <div class="counter-number" id="days">000</div>
+          <div class="counter-label">Days</div>
+        </div>
+        <div class="counter-card">
+          <div class="counter-number" id="hours">00</div>
+          <div class="counter-label">Hours</div>
+        </div>
+        <div class="counter-card">
+          <div class="counter-number" id="minutes">00</div>
+          <div class="counter-label">Mins</div>
+        </div>
+        <div class="counter-card">
+          <div class="counter-number" id="seconds">00</div>
+          <div class="counter-label">Secs</div>
+        </div>
+      </div>
+
+      <p class="serif" style="font-size:1rem;font-style:italic;color:var(--sage);text-align:center;">
+        since August 1, 2025 — and every second has been worth it.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════
+      HORIZONTAL FILM TIMELINE
+════════════════════════════════ -->
+  <section class="timeline-section">
+    <div class="text-center mb-10">
+      <h2 class="serif" style="font-size: 2.5rem; color: var(--rose);">Our Journey</h2>
+      <p style="color: var(--warm-gray); font-size: 0.9rem;">( Swipe sideways to see our memories )</p>
+    </div>
+
+    <div class="timeline-horizontal-wrapper">
+      <div class="timeline-track">
+
+        <!-- Month 1 -->
+        <div class="timeline-card-horizontal">
+          <div class="film-frame"><img src="month1.jpg" alt="August"></div>
+          <p style="font-size: 0.7rem; color: var(--rose); font-weight: bold; letter-spacing: 0.1em;">AUG 2025</p>
+          <h3 class="serif" style="font-size: 1.1rem; margin: 0.3rem 0;">The Beginning ✨</h3>
+          <p style="font-size: 0.8rem; color: var(--warm-gray); line-height: 1.4;">Where it all started.</p>
+        </div>
+
+        <!-- Month 2 -->
+        <div class="timeline-card-horizontal">
+          <div class="film-frame"><img src="month2.jpg" alt="September"></div>
+          <p style="font-size: 0.7rem; color: var(--rose); font-weight: bold; letter-spacing: 0.1em;">SEP 2025</p>
+          <h3 class="serif" style="font-size: 1.1rem; margin: 0.3rem 0;">Our First Date</h3>
+          <p style="font-size: 0.8rem; color: var(--warm-gray); line-height: 1.4;">Hiya-hiya pa rito eh.</p>
+        </div>
+
+        <!-- Month 3 -->
+        <div class="timeline-card-horizontal">
+          <div class="film-frame"><img src="month3.jpg" alt="October"></div>
+          <p style="font-size: 0.7rem; color: var(--rose); font-weight: bold; letter-spacing: 0.1em;">OCT 2025</p>
+          <h3 class="serif" style="font-size: 1.1rem; margin: 0.3rem 0;">SM with "Journalists"</h3>
+          <p style="font-size: 0.8rem; color: var(--warm-gray); line-height: 1.4;">A day I never wanted to end.</p>
+        </div>
+
+        <!-- Month 4 -->
+        <div class="timeline-card-horizontal">
+          <div class="film-frame"><img src="month4.jpg" alt="November"></div>
+          <p style="font-size: 0.7rem; color: var(--rose); font-weight: bold; letter-spacing: 0.1em;">NOV 2025</p>
+          <h3 class="serif" style="font-size: 1.1rem; margin: 0.3rem 0;">Our Achievement</h3>
+          <p style="font-size: 0.8rem; color: var(--warm-gray); line-height: 1.4;">My number 1 supporter is always you.
+          </p>
+        </div>
+
+        <!-- Month 5 -->
+        <div class="timeline-card-horizontal">
+          <div class="film-frame"><img src="month5.jpg" alt="December"></div>
+          <p style="font-size: 0.7rem; color: var(--rose); font-weight: bold; letter-spacing: 0.1em;">DEC 2025</p>
+          <h3 class="serif" style="font-size: 1.1rem; margin: 0.3rem 0;">Getaway before holiday</h3>
+          <p style="font-size: 0.8rem; color: var(--warm-gray); line-height: 1.4;">A time well spent.</p>
+        </div>
+
+        <!-- Month 6 -->
+        <div class="timeline-card-horizontal">
+          <div class="film-frame"><img src="month6.jpg" alt="January"></div>
+          <p style="font-size: 0.7rem; color: var(--rose); font-weight: bold; letter-spacing: 0.1em;">JAN 2026</p>
+          <h3 class="serif" style="font-size: 1.1rem; margin: 0.3rem 0;">Birthday and house visit</h3>
+          <p style="font-size: 0.8rem; color: var(--warm-gray); line-height: 1.4;">Happy 17, happy us, and happy
+            birthday.</p>
+        </div>
+
+        <!-- Month 7 -->
+        <div class="timeline-card-horizontal">
+          <div class="film-frame"><img src="month7.jpg" alt="February"></div>
+          <p style="font-size: 0.7rem; color: var(--rose); font-weight: bold; letter-spacing: 0.1em;">FEB 2026</p>
+          <h3 class="serif" style="font-size: 1.1rem; margin: 0.3rem 0;">Birthday and meet the fam</h3>
+          <p style="font-size: 0.8rem; color: var(--warm-gray); line-height: 1.4;">Thankful for spending my birthday
+            with you.</p>
+        </div>
+
+        <!-- Month 8 -->
+        <div class="timeline-card-horizontal">
+          <div class="film-frame"><img src="month8.jpg" alt="March"></div>
+          <p style="font-size: 0.7rem; color: var(--rose); font-weight: bold; letter-spacing: 0.1em;">MAR 2026</p>
+          <h3 class="serif" style="font-size: 1.1rem; margin: 0.3rem 0;">Dinner with Fam and Recog Celeb</h3>
+          <p style="font-size: 0.8rem; color: var(--warm-gray); line-height: 1.4;">Gala with fam, cousins, and us.</p>
+        </div>
+
+        <!-- Month 9 -->
+        <div class="timeline-card-horizontal">
+          <div class="film-frame"><img src="month9.jpg" alt="April"></div>
+          <p style="font-size: 0.7rem; color: var(--rose); font-weight: bold; letter-spacing: 0.1em;">APR 2026</p>
+          <h3 class="serif" style="font-size: 1.1rem; margin: 0.3rem 0;">Baby Month</h3>
+          <p style="font-size: 0.8rem; color: var(--warm-gray); line-height: 1.4;">Hopeful and exciting for the next
+            chapter.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════
+     REVEAL REASONS
+════════════════════════════════ -->
+  <section class="py-20 px-6 reveal" style="background:linear-gradient(180deg,var(--cream) 0%,#f9eef0 100%);">
+    <div class="w-full max-w-sm mx-auto flex flex-col items-center gap-2 text-center">
+
+      <p style="font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--rose);">✦ from the heart ✦
+      </p>
+      <h2 class="serif" style="font-size:2.5rem;font-weight:300;">Why I Love You</h2>
+      <p style="font-size:0.9rem;color:var(--warm-gray);margin-top:0.3rem;">Press the heart to reveal a reason.</p>
+
+      <button class="heart-btn mt-6" onclick="revealReason()" id="heartBtn" aria-label="Reveal a reason">
+        <i data-lucide="heart" style="width:28px;height:28px;"></i>
+      </button>
+
+      <p style="font-size:0.75rem;color:var(--warm-gray);margin-top:0.5rem;" id="reasonCounter">0 / 5 revealed</p>
+
+      <div id="reasonContainer" style="width:100%;"></div>
+
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════
+     MUSIC / SPOTIFY - FIXED
+════════════════════════════════ -->
+  <section class="spotify-section py-20 px-6 reveal"
+    style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);">
+    <div class="w-full max-w-sm mx-auto flex flex-col items-center gap-8 text-center">
+
+      <div>
+        <p style="font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:#1DB954;">♫ our soundtrack ♫</p>
+        <h2 class="serif" style="font-size:2.5rem;font-weight:300;color:white;margin-top:0.4rem;">Our Playlist</h2>
+        <p style="font-size:0.9rem;color:rgba(255,255,255,0.5);margin-top:0.4rem;">Songs that remind me of us.</p>
+      </div>
+
+      <div id="spotify-container" style="position: relative; width: 100%; max-width: 352px; margin: auto;">
+        <!-- Overlay removed: it was blocking all Spotify controls (play, pause, volume, etc.) -->
+        <iframe id="spotify-iframe" style="border-radius:12px"
+          src="https://open.spotify.com/embed/playlist/5tLlfmjqGYG21Db1hThtAQ?utm_source=generator" width="100%"
+          height="352" frameBorder="0"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+        </iframe>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════
+      PRANK SECTION
+════════════════════════════════ -->
+  <section class="reveal" style="padding: 5rem 1.5rem; text-align: center; background: var(--cream);">
+    <div style="width: 100%; max-width: 24rem; margin: 0 auto;">
+      <p
+        style="font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--rose);margin-bottom:0.5rem;">
+        ✦ one last question ✦</p>
+      <h2 class="serif" style="font-size: 2.2rem; font-weight: 300; margin-bottom: 0.4rem; color: #3a2d2d;">
+        Will you be my date forever?
+      </h2>
+      <p style="font-size:0.85rem;color:var(--warm-gray);margin-bottom:2rem;">Choose wisely. 😏</p>
+
+      <div style="display: flex; justify-content: center; align-items: center; gap: 1.5rem;">
+        <!-- FIX 3: Replaced jarring alert() with a smooth in-page reveal -->
+        <button onclick="showYesMessage()" style="background-color: #b8c5b0; color: #fdf6f0; font-family: 'Jost', sans-serif; 
+                     padding: 0.75rem 2.5rem; border: none; border-radius: 9999px; 
+                     font-size: 1rem; cursor: pointer; text-transform: uppercase; 
+                     letter-spacing: 0.05em; transition: transform 0.2s, background 0.2s; z-index: 10;">
+          Yes! 💗
+        </button>
+
+        <button id="noBtn" style="background-color: transparent; color: #d98fa0; font-family: 'Jost', sans-serif; 
+                     padding: 0.75rem 2.5rem; border: 1px solid #d98fa0; border-radius: 9999px; 
+                     font-size: 1rem; cursor: pointer; text-transform: uppercase; 
+                     letter-spacing: 0.05em; transition: all 0.2s; position: relative; z-index: 50;">
+          No
+        </button>
+      </div>
+
+      <!-- Hidden yes message, revealed on click -->
+      <div id="yesMessage" style="display:none; margin-top:2rem; animation: fadeUp 0.6s ease both;">
+        <p class="serif" style="font-size:1.6rem; font-style:italic; color:var(--deep-rose);">Sabi na mag-yes ka eh! ❤️
+        </p>
+        <p style="font-size:0.85rem; color:var(--warm-gray); margin-top:0.5rem;">I can read your mind. 🥰</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════
+     FOOTER
+════════════════════════════════ -->
+  <footer class="py-16 px-6 text-center" style="background:var(--text-dark);">
+    <div class="w-full max-w-sm mx-auto flex flex-col items-center gap-4">
+      <div class="divider-flourish w-full">
+        <i data-lucide="heart" style="width:14px;height:14px;color:var(--blush);flex-shrink:0;"></i>
+      </div>
+      <h2 class="serif" style="font-size:2rem;font-weight:300;font-style:italic;color:var(--cream);">Here's to forever.
+      </h2>
+      <p style="font-size:0.8rem;color:var(--warm-gray);">Sarang-hae · Happy 9th Monthsary 🌸</p>
+      <div class="divider-flourish w-full">
+        <i data-lucide="heart" style="width:14px;height:14px;color:var(--blush);flex-shrink:0;"></i>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ════════════════════════════════
+     FLOATING PETALS
+════════════════════════════════ -->
+  <div id="petals"></div>
+
+  <script>
+    // ── Init Lucide Icons ──
+    lucide.createIcons();
+
+    // ════════════════════════════════════════════════
+    // FIX 4: Safe localStorage wrapper — won't crash in
+    // incognito / private browsing mode (was killing all
+    // JS below it with an uncaught DOMException).
+    // ════════════════════════════════════════════════
+    const store = {
+      get(k) { try { return localStorage.getItem(k); } catch { return null; } },
+      set(k, v) { try { localStorage.setItem(k, v); } catch { } },
+      del(k) { try { localStorage.removeItem(k); } catch { } },
+    };
+
+    // ════════════════════════════════════════════════
+    // FIX 5 & 6: Counter now shows SECONDS and ticks
+    // every 1 second (was 10 s — felt completely dead).
+    // ════════════════════════════════════════════════
+    const startDate = new Date('2025-08-01T00:00:00');
+
+    function updateCounter() {
+      const diff = Date.now() - startDate.getTime();
+      if (diff < 0) return;
+      const days = Math.floor(diff / 86400000);
+      const hours = Math.floor((diff % 86400000) / 3600000);
+      const minutes = Math.floor((diff % 3600000) / 60000);
+      const secs = Math.floor((diff % 60000) / 1000);
+      document.getElementById('days').textContent = String(days).padStart(3, '0');
+      document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+      document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+      const secEl = document.getElementById('seconds');
+      if (secEl) secEl.textContent = String(secs).padStart(2, '0');
+    }
+    updateCounter();
+    setInterval(updateCounter, 1000);
+
+    // ════════════════════════════════════════════════
+    // FIX 7: Background music — all localStorage calls
+    // now go through the safe wrapper; also merged the
+    // two competing DOMContentLoaded blocks into one
+    // clean flow here.
+    // ════════════════════════════════════════════════
+    const music = document.getElementById('bgMusic');
+
+    const savedTime = parseFloat(store.get('musicTimestamp') || '0');
+    if (savedTime > 0 && isFinite(savedTime)) {
+      music.currentTime = savedTime;
+    }
+
+    // Save playback position every second
+    setInterval(() => {
+      if (music && !music.paused) store.set('musicTimestamp', music.currentTime);
+    }, 1000);
+
+    // FIX 7b: onended uses safe wrapper
+    music.onended = () => store.del('musicTimestamp');
+
+    // Auto-play on first user interaction (browser policy)
+    let hasPlayed = false;
+    function tryPlay() {
+      if (hasPlayed) return;
+      hasPlayed = true;
+      music.play().catch(() => { });
+    }
+    ['click', 'touchstart', 'scroll'].forEach(ev =>
+      document.addEventListener(ev, tryPlay, { once: true, passive: true })
+    );
+
+    // Pause bg music when Spotify iframe is focused, resume when page regains focus
+    window.addEventListener('blur', () => {
+      setTimeout(() => {
+        if (document.activeElement && document.activeElement.tagName === 'IFRAME') {
+          music.pause();
+        }
+      }, 150);
+    });
+    window.addEventListener('focus', () => {
+      if (music.paused && hasPlayed) music.play().catch(() => { });
+    });
+
+    // ── Reasons ──
+    const reasons = [
+      { icon: '🌸', text: `Because your laugh is the most beautiful sound in the world — I'd do anything just to hear it.` },
+      { icon: '✨', text: `Because you make ordinary moments worth remembering.` },
+      { icon: '💫', text: `Because even on my hardest days, just knowing you exist makes everything better.` },
+      { icon: '🌿', text: `Because the way you care so deeply for the people you love shows what a truly beautiful person you are.` },
+      { icon: '💗', text: `Because choosing you — every single day — is the easiest and best decision I've ever made.` },
+    ];
+
+    let revealedCount = 0;
+    const revealed = new Set();
+
+    function revealReason() {
+      const btn = document.getElementById('heartBtn');
+      if (revealedCount >= reasons.length) {
+        document.getElementById('reasonCounter').textContent = '✦ All my reasons ✦';
+        return;
+      }
+
+      let idx;
+      do { idx = Math.floor(Math.random() * reasons.length); } while (revealed.has(idx));
+      revealed.add(idx);
+      revealedCount++;
+
+      const r = reasons[idx];
+      const container = document.getElementById('reasonContainer');
+      const card = document.createElement('div');
+      card.className = 'reason-card';
+      card.style.position = 'relative';
+      card.innerHTML = `
+        <span class="reason-number">${revealedCount}</span>
+        <div style="font-size:2rem;margin-bottom:0.5rem;">${r.icon}</div>
+        <p class="serif" style="font-size:1.15rem;font-style:italic;color:var(--text-dark);line-height:1.6;">${r.text}</p>
+      `;
+      container.prepend(card);
+
+      const counter = document.getElementById('reasonCounter');
+      counter.textContent = revealedCount >= reasons.length
+        ? '✦ All my reasons ✦'
+        : `${revealedCount} / ${reasons.length} revealed`;
+    }
+
+    // ── Floating Petals ──
+    const petalChars = ['🌸', '🌿', '✦', '·'];
+    const petalContainer = document.getElementById('petals');
+
+    function createPetal() {
+      const p = document.createElement('div');
+      p.className = 'petal';
+      p.textContent = petalChars[Math.floor(Math.random() * petalChars.length)];
+      p.style.left = Math.random() * 100 + 'vw';
+      p.style.top = '-20px';
+      p.style.fontSize = (0.6 + Math.random() * 0.8) + 'rem';
+      p.style.animationDuration = (6 + Math.random() * 8) + 's';
+      p.style.animationDelay = Math.random() * 4 + 's';
+      petalContainer.appendChild(p);
+      setTimeout(() => p.remove(), 15000);
+    }
+    setInterval(createPetal, 1800);
+
+    // ── Scroll Reveal ──
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // ════════════════════════════════════════════════
+    // FIX 8: No button — clamped properly so it never
+    // goes even partially off-screen on small phones.
+    // ════════════════════════════════════════════════
+    const noBtn = document.getElementById('noBtn');
+
+    function moveButton() {
+      const bw = noBtn.offsetWidth || 110;
+      const bh = noBtn.offsetHeight || 44;
+      const pad = 10;
+      const maxX = window.innerWidth - bw - pad;
+      const maxY = window.innerHeight - bh - pad;
+      const x = Math.max(pad, Math.random() * maxX);
+      const y = Math.max(pad, Math.random() * maxY);
+      noBtn.style.position = 'fixed';
+      noBtn.style.margin = '0';
+      noBtn.style.left = x + 'px';
+      noBtn.style.top = y + 'px';
+      noBtn.style.zIndex = '8000';
+    }
+
+    noBtn.addEventListener('mouseover', moveButton);
+    noBtn.addEventListener('touchstart', (e) => {
+      e.preventDefault();
+      moveButton();
+    }, { passive: false });
+
+    // FIX 3 (JS side): Yes button shows styled message instead of alert()
+    function showYesMessage() {
+      // Snap No button back so it doesn't float forever
+      noBtn.style.position = 'relative';
+      noBtn.style.left = 'auto';
+      noBtn.style.top = 'auto';
+      const msg = document.getElementById('yesMessage');
+      if (msg) msg.style.display = 'block';
+    }
+
+    // ── Draggable Film Timeline ──
+    const timelineWrapper = document.querySelector('.timeline-horizontal-wrapper');
+    let isDragging = false;
+    let startX, scrollLeft;
+
+    if (timelineWrapper) {
+      timelineWrapper.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        startX = e.pageX - timelineWrapper.offsetLeft;
+        scrollLeft = timelineWrapper.scrollLeft;
+        timelineWrapper.style.cursor = 'grabbing';
+      });
+      window.addEventListener('mouseup', () => {
+        isDragging = false;
+        if (timelineWrapper) timelineWrapper.style.cursor = 'grab';
+      });
+      window.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+        const x = e.pageX - timelineWrapper.offsetLeft;
+        const walk = (x - startX) * 1.5;
+        timelineWrapper.scrollLeft = scrollLeft - walk;
+      });
+    }
+
+    // ── Click Heart Particles ──
+    // FIX 9: Only fire on the page itself, not inside iframes or the No button
+    document.addEventListener('click', function (e) {
+      if (e.target === noBtn) return; // don't spawn on No button
+      const heart = document.createElement('div');
+      heart.innerHTML = '❤️';
+      heart.className = 'heart-particle';
+      heart.style.left = e.clientX + 'px';
+      heart.style.top = e.clientY + 'px';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 1000);
+    });
+  </script>
+</body>
+
+</html>
